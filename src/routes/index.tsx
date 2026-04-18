@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { Layout } from "../components/Layout";
-import { MoviesList } from "../pages/MoviesList";
+import { MoviesList } from "../pages/Home";
 import { MovieDetails } from "../pages/MovieDetails";
 
 export function Router() {

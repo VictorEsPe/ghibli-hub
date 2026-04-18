@@ -1,8 +1,22 @@
 import type { Movie } from "../types/movieType";
 
-export async function fetchMovies(): Promise<Movie[]> {
+export async function fetchMoviesList(): Promise<Movie[]> {
   const response = await fetch("https://ghibliapi.vercel.app/films");
-  const data = await response.json();
 
-  return data;
+  if(!response.ok) {
+    throw new Error("Failed to fetch movies list");
+  }
+
+  return await response.json();
+
+}
+
+export async function fetchMovie(id: string): Promise<Movie> {
+    const response = await fetch(`https://ghibliapi.vercel.app/films/${id}`);
+
+    if(!response.ok) {
+    throw new Error("Failed to fetch movies data");
+  }
+
+    return await response.json();
 }
