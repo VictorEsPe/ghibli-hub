@@ -1,14 +1,12 @@
-import { Nav } from "./components/nav"
-import { MoviesList } from "./components/MoviesList"
+import { BrowserRouter } from "react-router-dom"
+import { Router } from "./routes"
 
 function App() {
   
   return (
-    <>
-     <Nav />
-
-     <MoviesList />
-    </>
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
   )
 }
 
