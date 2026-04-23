@@ -49,20 +49,19 @@ export function MoviesList() {
           <li key={index}>
             <Link
               to={`/${movie.id}`}
-              className="flex flex-col items-center min-w-79 max-w-125 border border-gray-300 rounded-lg p-5 shadow-lg hover:scale-102 transition-transform duration-200"
+              className="flex flex-col items-center min-w-79 max-w-150 border border-gray-300 rounded-lg p-5 shadow-lg hover:scale-102 transition-transform duration-200"
             >
               <img
-                src={movie.image}
+                src={movie.movie_banner}
                 alt={movie.title}
-                className="w-xs h-xs mb-7 rounded-lg"
+                className="mb-7 rounded-lg"
               />
-              <div className="flex gap-2 items-end w-full mb-2">
-                <h4 className="text-gray-950 font-semibold text-lg">
+              <div className="flex gap-2 items-center w-full mb-2">
+                <h3 className="text-gray-950 font-semibold text-lg sm:text-2xl">
                   {movie.title}
-                </h4>
-                <p className="text-gray-500">{movie.release_date}</p>
+                </h3>
+                <p className="text-gray-500 text-sm sm:text-lg">{movie.release_date}</p>
               </div>
-              <p className="text-gray-700">{movie.description}</p>
             </Link>
           </li>
         ))}
