@@ -3,7 +3,7 @@ import { fetchMoviesList } from "../../services/fetchMovies";
 import type { Movie } from "../../types/movieType";
 import { Link } from "react-router-dom";
 
-export function MoviesList() {
+export function Home() {
   const [movies, setMovies] = useState<Movie[] | null>(null);
   const [error, setError] = useState<boolean>(false);
 
