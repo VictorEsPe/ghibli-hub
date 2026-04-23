@@ -12,8 +12,8 @@ export function MoviesList() {
       try {
         const data = await fetchMoviesList();
         const moviesList = data
-          .slice(0, 10)
-          .sort((a, b) => (a.title > b.title ? 1 : -1));
+          .sort((a, b) => (a.title > b.title ? 1 : -1))
+          .slice(0, 10);
 
         setError(false);
         setMovies(moviesList);
@@ -30,17 +30,16 @@ export function MoviesList() {
       <div className="flex flex-col items-center mt-5 gap-10">
         <p>Failed to load movies. Please try again later.</p>
       </div>
-    )
+    );
   }
-  
+
   if (!movies) {
     return (
       <div className="flex flex-col items-center mt-5 gap-10">
         <p>Loading...</p>
       </div>
-    )
+    );
   }
-
 
   return (
     <section className="flex flex-col items-center gap-5 p-5">
