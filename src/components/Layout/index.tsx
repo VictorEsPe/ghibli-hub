@@ -1,4 +1,4 @@
-import { Nav } from "../nav";
+import { Nav } from "../Nav";
 import { Outlet } from "react-router-dom";
 
 export function Layout() {

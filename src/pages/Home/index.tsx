@@ -26,23 +26,31 @@ export function MoviesList() {
   }, []);
 
   if (error) {
-    return <p>Failed to load movies. Please try again later.</p>;
+    return (
+      <div className="flex flex-col items-center mt-5 gap-10">
+        <p>Failed to load movies. Please try again later.</p>
+      </div>
+    )
   }
   
   if (!movies) {
-    return <p>Loading...</p>;
+    return (
+      <div className="flex flex-col items-center mt-5 gap-10">
+        <p>Loading...</p>
+      </div>
+    )
   }
 
 
   return (
-    <section className="flex flex-col items-center gap-8">
-      <h2 className="text-gray-800 text-2xl">Lista de Filmes</h2>
-      <ul className="flex flex-col gap-5">
+    <section className="flex flex-col items-center gap-5 p-5">
+      <h2 className="text-gray-800 text-4xl">Film List</h2>
+      <ul className="flex flex-center flex-col gap-8">
         {movies.map((movie, index) => (
           <li key={index}>
             <Link
               to={`/${movie.id}`}
-              className="flex flex-col items-center w-md border border-gray-300 rounded-lg p-5 shadow-sm"
+              className="flex flex-col items-center min-w-79 max-w-125 border border-gray-300 rounded-lg p-5 shadow-lg hover:scale-102 transition-transform duration-200"
             >
               <img
                 src={movie.image}
