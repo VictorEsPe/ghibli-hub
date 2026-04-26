@@ -56,17 +56,23 @@ export function MovieDetails() {
   }
 
   return (
-    <section className="p-5  flex flex-col items-center">
-      <div className="flex flex-col items-start gap-5">
+    <section className="min-h-screen px-5 flex justify-center items-center">
+      {/* 
+        w-full → faz o card ocupar 100% da largura do container pai. É ele que garante o crescimento e encolhimento conforme a tela muda.
+        max-w-md → coloca um teto de largura. Sem ele, o card esticaria até o limite da tela em monitores grandes.
+
+        Uma forma de visualizar: w-full diz "ocupa tudo que puder", e max-w-md completa "mas nunca mais que isso".
+      */}
+      <div className="flex flex-col w-full max-w-md gap-5">
         <Link
           to="/"
-          className="border border-gray-400 py-2 px-5 rounded-3xl text-gray-700 hover:bg-gray-200"
+          className="self-start border border-gray-400 py-2 px-5 rounded-3xl text-gray-700 hover:bg-gray-200"
         >
           &lt; Return
         </Link>
         {movie && (
           <div
-            className="min-w-75 max-w-md p-4 border
+            className="w-full p-4 border
            border-gray-400 rounded-lg shadow-md flex flex-col items-start gap-5"
           >
             <img
